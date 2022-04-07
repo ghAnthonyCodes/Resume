@@ -1,0 +1,218 @@
+\documentclass[a4paper,11pt]{article}
+
+%A Few Useful Packages
+\usepackage{enumitem}
+\usepackage{marvosym}
+\usepackage{tabularx} % in the preamble
+\usepackage{makecell}
+
+\usepackage[margin=1cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+\usepackage{titlesec}					%custom \section
+\newcolumntype{R}{>{\raggedleft\arraybackslash}p{1.85cm}}
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%CV Sections inspired by:
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\large\scshape\bfseries}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+\addtolength{\voffset}{-1.0cm}
+% Left align
+\addtolength{\oddsidemargin}{-1.0cm}
+
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+%--------------------TITLE-------------
+\par{\centering{\huge Anthony Meyer \\
+\small \textsc{Address:} 7504 Kerri Way, Knoxville, TN \---
+\small \textsc{Phone:} 865\--599\--5036 \\
+\textsc{Email:} \href{mailto:anthonypaulmeyer@gmail.com}{anthonypaulmeyer@gmail.com} \---
+\textsc{Github:} \href{https://github.com/ghAnthonyCodes/}{github.com/ghAnthonyCodes/}
+} \smallskip\par}
+
+
+%--------------------SECTIONS-----------------------------------
+
+% Section: Skills
+\section{Skills}
+\begin{tabularx}{\textwidth}{rl}
+   Working Knowledge: & Xilinx SoCs, Petalinux, AWS (EC2 and Elastic Beanstalk), Django, \\
+                                     & Neural Networks with PyTorch, SciPy, OpenAI Gym, Latex, iOS App Dev, \\
+                                     & Basic Game Engine Dev, Reinforcement Learning, Classification Methods, \\
+                                     & Randomized Optimization Methods, Superviser and Unsupervised Learning \\
+                                     & TFS, SAFe / Agile Scrum, git, C++, C, C\#, Python\\
+\end{tabularx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Section: Education
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hfill
+\section{Education}
+\begin{tabularx}{\textwidth}{lXr}
+   \textbf{Georgia Institute of Technology} & & Graduated: May 2021\\
+   Master of Science in \textsc{Computer Science} & & \normalsize \textsc{Gpa}: 4.0/4.0\\
+   \emph{Machine Learning Specialization}
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{lXr}
+   \textbf{University of Tennessee Knoxville} &  & Graduated: Dec 2015\\
+   Bachelor of Science in \textsc{Electrical Engineering} &  & \normalsize \textsc{Gpa}: 3.93/4.0\\
+\end{tabularx}
+
+\hfill
+\section{Work Experience}
+\begin{tabularx}{\textwidth}{R|X}
+   \emph{Current} & \textbf{Siemens Healthineers} \-- Knoxville, TN\\
+   \textsc{Jan 2016} & \emph{Senior Embedded Software Engineer}\\
+   & \small{
+      \begin{itemize}[leftmargin=20pt,topsep=1pt,itemsep=1pt,partopsep=0pt, parsep=1pt]
+         \item Architected and implemented embedded software for PET detector electronic assemblies. This embedded software:
+         \begin{itemize}
+         	\item performs setup algorithms that calibrate the detectors to account for timing and signal variation due to material and manufacturing imperfections.
+		\item monitors the environment, applying real-time gain adjustments to account for the temperature variation in detector material.
+		\item maintains a PID cooling loop to keep detector temperature at a specified set-point.
+		\item calibrates high-speed FPGA communications lanes to maintain stability.
+		\item monitors and reports system faults and failure modes.
+         \end{itemize}
+         \item Migrated embedded software platform from bare metal OS running on soft-core processor to Linux running on ARM processors.
+         \item Developed GUI tools to parse PET acquisition data, calibrate the detector electronic assemblies, and visualize the results.
+         \item Developed functional test set software for 8 high-level assemblies.
+         \item Acted as SAFe Scrum Master for the Event Detection and Discrimination Team.
+         \item Acted as Intern Co-Recruiter and Coordinator, leading projects with and mentoring over 15 interns.
+         \item Released engineering change orders for cables and wiring diagrams.
+         \item Wrote and released software design specifications, unit test specifications, and command interface specifications.
+         
+      \vspace{-0.5cm}
+      \end{itemize}}\\
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{R|X}
+   \textsc{Jan 2016} & \textbf{Make Me Modern (startup venture)} \-- Knoxville, TN\\
+   \textsc{Jan 2015} & \emph{Full-Stack Developer}\\
+   & \small{
+      \begin{itemize}[leftmargin=20pt,topsep=1pt,itemsep=1pt,partopsep=0pt, parsep=1pt]
+         \item Developed an automated system that extracts pictures, theme colors, text information, and business information from old websites, and uses that data to generate new websites, using modern looking templates.
+         \item Worked with Python, Javascript, Django, AWS EC2, and postgreSQL technology stack.
+         \item Wrote web scraping and data abstraction modules to fetch business data.
+         \item Integrated Facebook, Yelp, and LinkedIn APIs to retrieve business information.
+         \item Won \$10,000 in funding through the University of Tennessee's Boyd Venture Challenge.
+         \item Won \$5,000 in funding through the high growth division of the University of Tennessee Business Plan Competition.
+      \vspace{-0.5cm}
+      \end{itemize}}\\
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{R|X}
+   \textsc{Aug 2013} & \textbf{Siemens Molecular Imaging} \-- Knoxville, TN\\
+   \textsc{Jan 2013} & \emph{ER\&D Intern}\\
+   & \small{
+      \begin{itemize}[leftmargin=20pt,topsep=1pt,itemsep=1pt,partopsep=0pt, parsep=1pt]
+         \item Handled complaint investigations involving detector electronic assemblies, acquisition computers, and other high-level assemblies.
+         \item Wrote GUI tools to automate firmware downloads, run PET acquisitions, and analyze the results.
+         \item Developed and implemented accelerometer circuit to measure G-force while dropping computers (customer complaint investigation).
+      \vspace{-0.5cm}
+      \end{itemize}}\\
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{R|X}
+   \textsc{Jul 2012} & \textbf{MOX Project} \-- Aiken, SC\\
+   \textsc{Jun 2012} & \emph{Electrical Engineering Intern}\\
+   & \small{
+      \begin{itemize}[leftmargin=20pt,topsep=1pt,itemsep=1pt,partopsep=0pt, parsep=1pt]
+         \item Drew wiring diagrams and calculated power budgets for the MOX nuclear disarmament facility.
+      \vspace{-0.5cm}
+      \end{itemize}}\\
+\end{tabularx}
+
+\hfill
+\section{School and Personal Projects}
+\begin{tabularx}{\textwidth}{R|X}
+
+   \multicolumn{2}{c}{} \\
+
+   \emph{Current} & \textbf{Optimal Glucose Project} \\
+   & \emph{Personal Project}\\
+   & \small{Extends Dexcom readings into the future using predictions calculated with meal and insulin events. Optimal parameters are calculated using simulated annealing with meal and insulin models, dexcom data, and meal and insulin events.
+   } \\
+   
+   \multicolumn{2}{c}{} \\
+
+   \textsc{Apr 2020} & \textbf{Markov Decision Processes} \-- Georgia Tech\\
+   & \emph{Machine Learning Project}\\
+   & \small{Implementation and analysis of three reinforcement learning algorithms (policy iteration, value iteration, and Q-learning) on two MDPs (OpenAI Frozen Lake and Tic-Tac-Toe). The Frozen Lake environment involves navigating an agent through an icy grid where actions have stochastic outcomes.
+   } \\
+   
+    \multicolumn{2}{c}{} \\
+
+   \textsc{Mar 2020} & \textbf{Unsupervised Learning and Dimensionality Reduction} \-- Georgia Tech\\
+   & \emph{Machine Learning Project}\\
+   & \small{Implementation and analysis of two clustering and four dimensionality reduction algorithms on two datasets. This paper covers K-Means clustering, expectation maximization, principle components analysis, independent component analysis, random components analysis, and linear discriminant analysis. The first dataset includes pulsar feature and classification data. The second dataset includes student feature and performance data.
+   } \\
+   
+    \multicolumn{2}{c}{} \\
+
+   \textsc{Dec 2018} & \textbf{Raven's Progressive Matrices Test Solver} \-- Georgia Tech\\
+   & \emph{Knowledge Based AI Project}\\
+   & \small{Implemented an agent that performs moderately well on a Raven's Progressive Matrices test, which is a visual test that is used to measure general human intelligence and abstract reasoning.
+   } \\
+   
+   \multicolumn{2}{c}{} \\
+
+   \textsc{Jul 2018} & \textbf{DQN on OpenAI Lunar Lander} \-- Georgia Tech\\
+   & \emph{Reinforcement Learning Project}\\
+   & \small{Implemented Deep Q-Learning algorithm that trained a lunar lander how to safely land on a platform in the OpenAI LunarLander-v2 environment.
+   } \\
+   
+
+\end{tabularx}
+
+\hfill
+\section{Scholarships and Honors}
+\begin{tabularx}{\textwidth}{XX}
+   	Min Kao Scholarship & Charles and Marth Sprankle Scholarship \\
+	Hope Scholarship & Tau Beta Pi \\
+	Summa Cum Laude
+\end{tabularx}
+\hfill
+\section{Some Hobbeys and Interests}
+\begin{tabularx}{\textwidth}{lX}
+	Music Recording, Rock Climbing, Competitive Programming, Hot Sauces, Pens, Dog Parks, \\
+	Baseball, Rubik's Cubes, Italian, Chess
+\end{tabularx}
+
+
+\end{document}
